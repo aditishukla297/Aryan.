@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Aryan 🎉</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .show {
+      animation: pop 0.5s ease forwards;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+
+  <div class="bg-white/95 backdrop-blur-md shadow-2xl rounded-3xl p-6 sm:p-8 md:p-10 w-full max-w-md text-center">
+
+    <!-- Profile Photo -->
+    <img
+      src="aryan.jpeg"
+      alt="Aryan"
+      class="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full object-cover border-4 border-pink-500 shadow-lg mb-5"
+    >
+
+    <!-- Heading -->
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-pink-500 mb-4">
+      🎂 Happy Birthday Aryan! 🎂
+    </h1>
+
+    <!-- Message -->
+    <p class="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-6">
+      Wishing you a day filled with happiness, laughter, and unforgettable memories.
+      May this year bring success, joy, and countless reasons to smile.
+    </p>
+
+    <!-- Emojis -->
+    <div class="text-4xl sm:text-5xl mb-5">
+      🎉 🎈 🎁
+    </div>
+
+    <!-- Quote -->
+    <p class="italic text-gray-500 text-sm sm:text-base">
+      "Count your life by smiles, not tears. Count your age by friends, not years."
+    </p>
+
+    <!-- Button -->
+    <button
+      onclick="celebrate()"
+      class="mt-6 w-full sm:w-auto px-8 py-3 bg-pink-500 text-white font-semibold rounded-xl shadow-lg hover:bg-pink-600 transition"
+    >
+      Click for a Surprise 🎊
+    </button>
+
+    <!-- Surprise Message -->
+    <p
+      id="surprise"
+      class="hidden mt-5 text-lg sm:text-xl font-bold text-purple-600"
+    >
+      Happy Birthday Aryan! 💖<br>
+      Have the most amazing year ahead! 🎉✨
+    </p>
+
+  </div>
+
+  <script>
+    function celebrate() {
+      const surprise = document.getElementById('surprise');
+
+      surprise.classList.remove('hidden');
+      surprise.classList.add('show');
+
+      confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
+      });
+
+      setTimeout(() => {
+        confetti({
+          particleCount: 100,
+          spread: 120,
+          origin: { x: 0.1 }
+        });
+
+        confetti({
+          particleCount: 100,
+          spread: 120,
+          origin: { x: 0.9 }
+        });
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>
